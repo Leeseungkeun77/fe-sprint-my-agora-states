@@ -15,12 +15,53 @@ const convertToDiscussion = (obj) => {
 
   // TODO: 객체 하나에 담긴 정보를 DOM에 적절히 넣어주세요.
 
+  const avatarImg = document.createElement("img");
+  avatarImg.src = obj.avatarUrl;
+  avatarImg.alt = "avatar of " + obj.author;
+  avatarWrapper.append(avatarImg);
 
+  // 02 콘텐츠
+  const contentTitle = document.createElement("h2");
+  const titleAncher = document.createElement("a");
+  contentTitle.className = "discussion__title";
+  titleAncher.textContent = obj.title;
+  titleAncher.href = obj.url;
+  contentTitle.append(titleAncher);
 
+  const contentInfo = document.createElement('div');
+  contentInfo.textContent = `${obj.author} / ${new Date(obj.createdAt).toLocaleString()}`;
+  contentInfo.className = "discussion__information";
+  discussionContent.append(contentTitle, contentInfo);
+
+   // 03 체크박스
+   const checked = document.createElement('p');
+   checked.textContent = obj.answer ? "☑" : "☐";
+   discussionAnswered.append(checked);
+  
   li.append(avatarWrapper, discussionContent, discussionAnswered);
   return li;
 };
 
+const form = document.querySelector('.form');
+const author = document.querySelector('.form__input--name > input');
+const title = document.querySelector('.form__input--title > input');
+const textArea = document.querySelector('.form__textbox > textarea');
+
+form.addEventListener('submit', (event) => {
+  event.preventDefault();
+  const obj = {
+    id: "unique number",
+    createdAt: new Date (),
+    title: title.value,
+    url: "https://github.com/codestates-seb/agora-states-fe/discussions/37",
+    author: author.value,
+    avatarUrl: "https://avatars.githubusercontent.com/u/73211553?s=64&v=4",
+  };
+    ul.prepend(convertToDiscussion(obj));
+    title.value = "";
+    author.value = '';
+    textArea.value = '';
+});
 // agoraStatesDiscussions 배열의 모든 데이터를 화면에 렌더링하는 함수입니다.
 const render = (element) => {
   for (let i = 0; i < agoraStatesDiscussions.length; i += 1) {

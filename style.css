@@ -1,1 +1,128 @@
 /* TODO: 보기 좋은 나만의 아고라 스테이츠를 위해서 CSS를 수정하세요. */
+
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Noto Sans KR', sans-serif;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-image: url("back.jpg");
+    background-size: cover;
+}
+
+.discussion__container {
+    display: flex;
+    width: 600px;
+    justify-content: space-between;
+    padding: 20px;
+    margin: 20px;
+    border-radius: 60px;
+    background-color: rgba(255,255,255, 0.3);
+    height: 120px;
+}
+
+.discussion__avatar--wrapper > img {
+    border-radius: 50px;
+    width: 48px;
+}
+
+.discussion__content {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    justify-content: space-between;
+}
+
+.discussion__title {
+    font-size: 17px;
+    margin-left: 20px;
+}
+
+.discussion__information {
+    text-align: right;
+}
+
+.discussion__answered {
+    /* display: flex; */
+    align-self: center;
+}
+
+
+.discussion__avatar--wrapper {
+    display: flex;
+    align-items: center;
+}
+
+h1 {
+    text-align: center;
+    padding-top: 50px;
+    margin-bottom: 20px;
+    color: antiquewhite;
+}
+
+.form__input--name > input {
+    width: 500px;
+    padding: 20px;
+    /* border-radius: 50px; */
+    border: 0px;
+    margin-bottom: 20px;
+    height: 60px;
+    font-size: 16px;
+    background-color: rgba(255,255,255, 0.8);
+}
+
+.form__input--title > input {
+    width: 500px;
+    padding: 20px;
+    border: 0px;
+    margin-bottom: 20px;
+    height: 60px;
+    font-size: 16px;
+    background-color: rgba(255,255,255, 0.8);
+}
+
+.form__textbox > textarea {
+    width: 500px;
+    padding: 20px;
+    border: 0px;
+    margin-bottom: 20px;
+    height: 60px;
+    font-size: 16px;
+    background-color: rgba(255,255,255, 0.8);
+}
+
+
+.form__submit {
+    flex:1;
+    margin:3px;
+    border: 0px;
+
+}
+.form__submit input {
+    width: 100px;
+    height: 43px;
+    border-radius: 50px;
+    font-size: 15px;
+    margin-left: 190px;
+}
+
+.form__container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin: 50px;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:link {
+    color: rgb(192, 182, 97);
+}
